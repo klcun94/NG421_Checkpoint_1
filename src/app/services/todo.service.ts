@@ -1,25 +1,37 @@
 import { Injectable } from '@angular/core';
-import {ITodo} from '../interfaces/itodo';
+import { ITodo } from '../interfaces/itodo';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-modal.component';
+
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
-  todoId: number = 0;
-  todoList: ITodo [] = [
-    // example of how to make an item in todo list
-    { title: 'Install Angular CLI', id: this.todoId },
-  
-  ]
-  constructor() { }
-  getTodos(){
+  title = 'Todos';
+  todoList: ITodo[] = [];
+  todoId = 1;
+  todoTitle: string;
+  description: string;
+
+  constructor(private modalService: NgbModal) { }
+
+  getTodos(): ITodo[] {
     return this.todoList;
   }
-  deleteTodo(todo: ITodo) {
-    const index = this.todoList.findIndex(todoItem => todoItem === todo);
-    this.todoList.splice(index, 1);
+  async deleteTodo(todo: ITodo) {
+    const modal = this.modalService.open(ConfirmationModalComponent);
+    const component: ConfirmationModalComponent = modal.componentInstance;
+    component.modalInstance = modal;
+
+    const result = await modal.result;
+
+    if (result === 'yes') {
+      const index = this.todoList.findIndex(todoItem => todoItem === todo);
+      this.todoList.splice(index, 1);
+    }
   }
-  addTodo(todo: ITodo):void {
+  addTodo(todo: ITodo): void {
     todo.id = this.todoId ++;
-    todoList.push(todo);
+    this.todoList.push(todo);
   }
 }

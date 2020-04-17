@@ -1,33 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
 import { CreateTodoComponent } from './create-todo/create-todo.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
-import {RouterModule } from '@angular/router';
-
-const routes = [];
-const appRoutes = RouterModule.forRoot(routes);
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
-    TodoListComponent,
     CreateTodoComponent,
-    ConfirmationModalComponent
+    TodoListComponent,
+    ConfirmationModalComponent,
   ],
   imports: [
     BrowserModule,
-    appRoutes,
+    AppRoutingModule,
     FormsModule,
     NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: []
+  entryComponents: [ConfirmationModalComponent],
 })
-export class AppModule { }
+export class AppModule {}
