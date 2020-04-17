@@ -12,9 +12,17 @@ export class TodoService {
   todoId = 1;
   todoTitle: string;
   description: string;
+  statuses: string[] = [
+    'Todo',
+    'Doing',
+    'Done'
+  ];
 
   constructor(private modalService: NgbModal) { }
 
+  getStatuses() {
+    return this.statuses;
+  }
   getTodos(): ITodo[] {
     return this.todoList;
   }
