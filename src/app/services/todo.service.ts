@@ -23,8 +23,11 @@ export class TodoService {
   getStatuses() {
     return this.statuses;
   }
-  getTodos(): ITodo[] {
-    return this.todoList;
+  getTodos(status?: string): ITodo[] {
+    if (!status) {
+      return this.todoList;
+    }
+    return this.todoList.filter(t => t.status === status);
   }
   async deleteTodo(todo: ITodo) {
     const modal = this.modalService.open(ConfirmationModalComponent);
