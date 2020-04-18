@@ -8,6 +8,7 @@ import { CreateTodoComponent } from './create-todo/create-todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
+import { BoardComponent } from './board/board/board.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ConfirmationModalComponent } from './confirmation-modal/confirmation-mo
     CreateTodoComponent,
     TodoListComponent,
     ConfirmationModalComponent,
+    BoardComponent,
   ],
   imports: [
     BrowserModule,

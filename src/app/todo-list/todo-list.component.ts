@@ -8,7 +8,7 @@ import { TodoService } from '../services/todo.service';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  //todoList: ITodo [] = [ ];
+  // todoList: ITodo [] = [ ];
   @Input() todo: ITodo;
   @Input() status;
 
