@@ -12,6 +12,7 @@ import { ITodo } from '../interfaces/itodo';
 export class TodoComponent implements OnInit {
   @Input() todo: ITodo;
   title = 'Todos';
+  isEditing: false;
 
   constructor(private todoService: TodoService, private modalService: NgbModal) { }
   ngOnInit() {
