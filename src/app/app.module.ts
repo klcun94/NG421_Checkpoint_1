@@ -9,6 +9,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 import { BoardComponent } from './board/board/board.component';
+import { EditModalComponent } from './edit-modal/edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BoardComponent } from './board/board/board.component';
     TodoListComponent,
     ConfirmationModalComponent,
     BoardComponent,
+    EditModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { TodoService } from '../services/todo.service';
 import { NgbModal, NgbModalRef, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-modal.component';
 import { ITodo } from '../interfaces/itodo';
+import { EditModalComponent } from '../edit-modal/edit-modal.component';
 
 @Component({
   selector: 'app-todo',

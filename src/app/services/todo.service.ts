@@ -8,8 +8,14 @@ import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-m
 })
 export class TodoService {
   title = 'Todos';
-  todoList: ITodo[] = [];
-  todoId = 0;
+  todoList: ITodo[] = [
+    { title: 'finish todo app',
+    id: 1,
+    status: 'Todo',
+    createdAt: new Date(),
+    description: ''}
+  ];
+  todoId = 2;
   todoTitle: string;
   description: string;
   statuses: string[] = [
