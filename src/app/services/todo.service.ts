@@ -9,7 +9,7 @@ import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-m
 export class TodoService {
   title = 'Todos';
   todoList: ITodo[] = [];
-  todoId = 1;
+  todoId = 0;
   todoTitle: string;
   description: string;
   statuses: string[] = [
