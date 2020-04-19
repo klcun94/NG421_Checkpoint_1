@@ -10,6 +10,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 import { BoardComponent } from './board/board/board.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TodotableComponent } from './todotable/todotable.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -20,12 +23,15 @@ import { EditModalComponent } from './edit-modal/edit-modal.component';
     ConfirmationModalComponent,
     BoardComponent,
     EditModalComponent,
+    TodotableComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],
