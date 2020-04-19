@@ -29,6 +29,6 @@ import { EditModalComponent } from './edit-modal/edit-modal.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ConfirmationModalComponent],
+  entryComponents: [ConfirmationModalComponent, EditModalComponent],
 })
 export class AppModule {}

@@ -10,11 +10,15 @@ import { ITodo } from '../interfaces/itodo';
 export class EditModalComponent implements OnInit {
   modalInstance: NgbModalRef;
   todo: ITodo;
+  editedDescription: string;
   constructor() { }
 
   ngOnInit() {
   }
   yes() {
+    this.modalInstance.close(this.editedDescription);
+  }
+  cancel(){
     this.modalInstance.close(this.todo.description);
   }
 }

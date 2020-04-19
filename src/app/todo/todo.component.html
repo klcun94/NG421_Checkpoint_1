@@ -2,6 +2,9 @@
     <label *ngIf="!isEditing" (dblclick)="isEditing=true">{{todo.title}}</label>
     <input type="text" *ngIf="isEditing" (blur)="isEditing=false" [(ngModel)]="todo.title">
     <div>
+        <label>Description: {{ todo.description }}</label>
+      </div>
+    <div>
         <select [(ngModel)]='todo.status'>
             <option value="Todo">Todo</option>
             <option value="Doing">Doing</option>
@@ -10,6 +13,8 @@
     </div>
     <div class="float-right">
         <button type="button" (click)= deleteTodo(todo) class="btn btn-danger btn-sm">Delete</button>
-        <button type="button" (click)= editTodo(todo) class="btn btn-danger btn-sm">Edit</button>
+    </div>
+    <div class="float-right">
+        <button type="button" (click)= editDescription(todo) class="btn btn-secondary btn-sm">Edit</button>
     </div>
 </div>

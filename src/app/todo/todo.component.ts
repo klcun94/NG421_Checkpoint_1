@@ -18,15 +18,26 @@ export class TodoComponent implements OnInit {
   constructor(private todoService: TodoService, private modalService: NgbModal) { }
   ngOnInit() {
   }
-  async deleteTodo() {
+  async deleteTodo(todo) {
+    let result;
     const modal = this.modalService.open(ConfirmationModalComponent);
-    const comp: ConfirmationModalComponent = modal.componentInstance;
-    comp.modalInstance = modal;
+    modal.componentInstance.modalInstance = modal;
+    try {
+      result = await modal.result;
+      if (result === 'yes') {
+        this.todoService.deleteTodo(todo);
+      }
+    } catch (ex) {}
+  }
+  async editDescription(todo: ITodo) {
+    let result;
+    const modal = this.modalService.open(EditModalComponent);
+    modal.componentInstance.modalInstance = modal;
+    modal.componentInstance.todo = todo;
 
-    const result = await modal.result;
-
-    if (result === 'yes') {
-      this.todoService.deleteTodo(this.todo);
-    }
+    try {
+      result = await modal.result;
+      this.todo.description = result;
+    } catch (ex) {}
   }
 }
